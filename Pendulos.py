@@ -2,7 +2,7 @@ import numpy as np
 import sympy as sp
 from scipy.constants import g
 
-def normal_frec(k1, k2, m, L):
+def normal_frecs(k1, k2, m, L):
     # Definimos la variable simbólica
     w2 = sp.symbols('w2')
 
@@ -26,7 +26,18 @@ def normal_frec(k1, k2, m, L):
 
     print(f"\n\nLos modos normales son: {normal_frec} y {-1 * normal_frec}")
 
-    return normal_frec
+    a1, a2 = sp.symbols('a1 a2')
 
-# Ejemplo de uso
-Pendulos_super_simples = normal_frec(1, 1, 1, 1)
+    # Definimos las equaciones con las frecuencias normales al cuadrado
+    
+
+
+
+
+    return solutions
+
+pendulo_unitario = normal_frecs(1,1,1,1)
+
+
+
+
