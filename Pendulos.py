@@ -7,6 +7,32 @@ import matplotlib.animation as animation
 import math
 
 def normal(k1, k2, m, L):
+    """
+        Función que recibe la masa colgante de ambos pendulos, la longitud L de la cuerda de los pendulos y las constantes de contracción
+    de los resortes que acoplan el sistema y devuelve; las frecuencias características, los modos normales y su correlación 
+    además de un grafico con el movimiento de ambos pendulos.
+
+    Args:
+        k1 (float): Constante del resorte pendulo pared.
+        k2 (float): Constante del resorte pendulo pendulo.
+        m (float): Masa de los pendulos.
+        L (float): Longitud de la cuerda de cada pendulo.
+
+    Return:
+        times (array) = arreglo de tiempos donde se calculó númericamente el movimiento.
+        theta_11 (array): Arreglo de posiciones para el péndulo de la izquierda en su primer modo.
+        theta_12 (array): Arreglo de posiciones para el péndulo de la derecha en su primer modo.
+        theta_21 (array): Arreglo de posiciones para el péndulo de la izquierda en su segundo modo modo.
+        theta_22 (array): Arreglo de posiciones para el péndulo de la derecha en su segundo modo.
+
+
+
+
+
+
+
+
+    """
     # Definimos la variable simbólica
     w2 = sp.symbols('w2')
 
