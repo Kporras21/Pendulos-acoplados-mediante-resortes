@@ -58,7 +58,7 @@ def movement(freqs, mode_1, mode_2, A, t_max):
     for i in range(len(times)-1):
         theta_11[i] = A * mode_1 * (np.cos((f1)* times[i]))
         theta_21[i] = A * (np.cos((f1)*times[i]))
-    print(theta_11)
+    
 
     plt.plot(times, theta_11, color = 'blue')
     plt.plot(times, theta_21, color = 'red')
@@ -81,51 +81,6 @@ def movement(freqs, mode_1, mode_2, A, t_max):
 
 times, theta_11, theta_21, theta_12, theta_22 = movement(frecuencias_U, A11, A12, 5, 30)
 
-# Crear la figura y los ejes
-fig, ax = plt.subplots(2, 1, figsize=(8, 8))
 
-# Inicializar las líneas que se actualizarán en la animación
-line1, = ax[0].plot([], [], lw=2, color='blue', label='Modo 1')
-line2, = ax[0].plot([], [], lw=2, color='red', label='Modo 2')
-line3, = ax[1].plot([], [], lw=2, color='blue', label='Modo 1')
-line4, = ax[1].plot([], [], lw=2, color='red', label='Modo 2')
 
-# Configurar los ejes
-ax[0].set_xlim(0, 30)
-ax[0].set_ylim(-5, 5)
-ax[0].set_title('Primera Frecuencia')
-ax[0].legend()
-ax[0].grid()
-
-ax[1].set_xlim(0, 30)
-ax[1].set_ylim(-5, 5)
-ax[1].set_title('Segunda Frecuencia')
-ax[1].legend()
-ax[1].grid()
-
-# Función de inicialización
-def init():
-    line1.set_data([], [])
-    line2.set_data([], [])
-    line3.set_data([], [])
-    line4.set_data([], [])
-    return line1, line2, line3, line4
-
-# Función de actualización
-def update(frame):
-    line1.set_data(times[:frame], theta_11[:frame])
-    line2.set_data(times[:frame], theta_21[:frame])
-    line3.set_data(times[:frame], theta_12[:frame])
-    line4.set_data(times[:frame], theta_22[:frame])
-    return line1, line2, line3, line4
-
-# Crear la animación
-ani = animation.FuncAnimation(fig, update, frames=len(times), init_func=init, blit=True)
-
-# Guardar la animación como un archivo mp4
-#ani.save('pendulum_animation.mp4', writer='ffmpeg', fps=30)
-
-# Mostrar la animación
-plt.tight_layout()
-plt.show()
 
